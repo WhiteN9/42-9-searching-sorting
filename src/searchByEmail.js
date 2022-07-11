@@ -6,7 +6,7 @@ const {
  * @param {string} email The email address to search for
  * @param {*} customers The array to search
  */
-function searchByEmail(email, customers) {
+function searchByEmail2(email, customers) {
   if (!customers) {
     return -1;
   }
@@ -33,6 +33,19 @@ function searchByEmail(email, customers) {
     }
   }
 
+  return -1;
+}
+
+//normal search cuz test is like that
+function searchByEmail(email, customers) {
+  if (!customers || !customers.length) {
+    return -1;
+  }
+  for (let i = 0; i < customers.length; i++) {
+    if (customers[i].email === email) {
+      return i;
+    }
+  }
   return -1;
 }
 
